@@ -5,11 +5,17 @@ function CheckboxesWorstFeatures(props) {
             <label
             ><input
                     onClick={function (event) {
-                        const newFeatures = [...props.formData.worstFeatures]
-                        if (newFeatures.includes(event.target.value)) {
-                            return
+                        let newFeatures = [...props.formData.worstFeatures]
+                        if (event.target.checked) {
+
+
+                            if (newFeatures.includes(event.target.value)) {
+                                return
+                            } else {
+                                newFeatures.push(event.target.value)
+                            }
                         } else {
-                            newFeatures.push(event.target.value)
+                            newFeatures = newFeatures.filter(target => target !== event.target.value)
                         }
 
                         const updated = { ...props.formData, worstFeatures: newFeatures }
@@ -25,13 +31,18 @@ function CheckboxesWorstFeatures(props) {
             <label
             ><input
                     onChange={function (event) {
-                        const newFeatures = [...props.formData.worstFeatures]
-                        if (newFeatures.includes(event.target.value)) {
-                            return
-                        } else {
-                            newFeatures.push(event.target.value);
-                        }
+                        let newFeatures = [...props.formData.worstFeatures]
+                        if (event.target.checked) {
 
+
+                            if (newFeatures.includes(event.target.value)) {
+                                return
+                            } else {
+                                newFeatures.push(event.target.value);
+                            }
+                        } else {
+                            newFeatures = newFeatures.filter(target => target !== event.target.value)
+                        }
                         const updated = { ...props.formData, worstFeatures: newFeatures };
                         props.setFormData(updated);
                     }}
@@ -42,12 +53,18 @@ function CheckboxesWorstFeatures(props) {
             <label
             ><input
                     onChange={function (event) {
-                        const newFeatures = [...props.formData.worstFeatures]
-                        if (newFeatures.includes(event.target.value)) {
-                            return
-                        } else {
+                        let newFeatures = [...props.formData.worstFeatures]
+                        if (event.target.checked) {
 
-                            newFeatures.push(event.target.value);
+
+                            if (newFeatures.includes(event.target.value)) {
+                                return
+                            } else {
+
+                                newFeatures.push(event.target.value);
+                            }
+                        } else {
+                            newFeatures = newFeatures.filter(target => target !== event.target.value)
                         }
                         const updated = { ...props.formData, worstFeatures: newFeatures };
                         props.setFormData(updated)
@@ -59,12 +76,18 @@ function CheckboxesWorstFeatures(props) {
             <label
             ><input
                     onChange={function (event) {
-                        const newFeatures = [...props.formData.worstFeatures]
-                        if (newFeatures.includes(event.target.value)) {
-                            return
-                        } else {
+                        let newFeatures = [...props.formData.worstFeatures]
+                        if (event.target.checked) {
 
-                            newFeatures.push(event.target.value)
+
+                            if (newFeatures.includes(event.target.value)) {
+                                return
+                            } else {
+
+                                newFeatures.push(event.target.value)
+                            }
+                        } else {
+                            newFeatures = newFeatures.filter(target => target !== event.target.value)
                         }
                         const updated = { ...props.formData, worstFeatures: newFeatures }
                         props.setFormData(updated)

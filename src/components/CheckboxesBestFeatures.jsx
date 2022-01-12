@@ -5,13 +5,18 @@ function CheckboxesBestFeatures(props) {
             <label
             ><input
                     onClick={function (event) {
-                        const newFeatures = [...props.formData.bestFeatures]
-                        if (newFeatures.includes(event.target.value)) {
-                            return
-                        } else {
-                            newFeatures.push(event.target.value)
-                        }
+                        let newFeatures = [...props.formData.bestFeatures]
+                        if (event.target.checked) {
 
+
+                            if (newFeatures.includes(event.target.value)) {
+                                return
+                            } else {
+                                newFeatures.push(event.target.value)
+                            }
+                        } else {
+                            newFeatures = newFeatures.filter(target => target != event.target.value)
+                        }
                         const updated = { ...props.formData, bestFeatures: newFeatures }
                         props.setFormData(updated)
 
@@ -25,13 +30,19 @@ function CheckboxesBestFeatures(props) {
             <label
             ><input
                     onChange={function (event) {
-                        const newFeatures = [...props.formData.bestFeatures]
-                        if (newFeatures.includes(event.target.value)) {
-                            return
-                        } else {
-                            newFeatures.push(event.target.value);
-                        }
+                        let newFeatures = [...props.formData.bestFeatures]
+                        if (event.target.checked) {
 
+
+
+                            if (newFeatures.includes(event.target.value)) {
+                                return
+                            } else {
+                                newFeatures.push(event.target.value);
+                            }
+                        } else {
+                            newFeatures = newFeatures.filter(target => target != event.target.value)
+                        }
                         const updated = { ...props.formData, bestFeatures: newFeatures };
                         props.setFormData(updated);
                     }}
@@ -42,12 +53,19 @@ function CheckboxesBestFeatures(props) {
             <label
             ><input
                     onChange={function (event) {
-                        const newFeatures = [...props.formData.bestFeatures]
-                        if (newFeatures.includes(event.target.value)) {
-                            return
-                        } else {
+                        let newFeatures = [...props.formData.bestFeatures]
 
-                            newFeatures.push(event.target.value);
+                        if (event.target.checked) {
+
+
+                            if (newFeatures.includes(event.target.value)) {
+                                return
+                            } else {
+
+                                newFeatures.push(event.target.value);
+                            }
+                        } else {
+                            newFeatures = newFeatures.filter(target => target !== event.target.value)
                         }
                         const updated = { ...props.formData, bestFeatures: newFeatures };
                         props.setFormData(updated)
@@ -59,12 +77,18 @@ function CheckboxesBestFeatures(props) {
             <label
             ><input
                     onChange={function (event) {
-                        const newFeatures = [...props.formData.bestFeatures]
-                        if (newFeatures.includes(event.target.value)) {
-                            return
-                        } else {
+                        let newFeatures = [...props.formData.bestFeatures]
+                        if (event.target.checked) {
 
-                            newFeatures.push(event.target.value)
+
+                            if (newFeatures.includes(event.target.value)) {
+                                return
+                            } else {
+
+                                newFeatures.push(event.target.value)
+                            }
+                        } else {
+                            newFeatures = newFeatures.filter(target => target !== event.target.value)
                         }
                         const updated = { ...props.formData, bestFeatures: newFeatures }
                         props.setFormData(updated)
