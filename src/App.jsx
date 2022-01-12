@@ -24,12 +24,17 @@ const initialForm = {
 
 function App() {
   const [formData, setFormData] = useState(initialForm)
+  const [surveys, setSurveys] = useState([])
   return (
     <>
       <Header />
       <Main
         formData={formData}
         setFormData={setFormData}
+        surveys={surveys}
+        setSurveys={setSurveys}
+        initialForm={initialForm}
+
 
       />
     </>

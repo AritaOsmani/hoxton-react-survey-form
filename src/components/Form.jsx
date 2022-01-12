@@ -1,5 +1,4 @@
 import CheckboxesBestFeatures from "./CheckboxesBestFeatures.jsx"
-import Checkboxes from "./CheckboxesBestFeatures.jsx"
 import CheckboxesTimeSpent from "./CheckboxesTimeSpent.jsx"
 import CheckboxesWorstFeatures from "./CheckBoxesWorstFeatures.jsx"
 import Email from "./Email.jsx"
@@ -11,7 +10,16 @@ import Username from "./Username.jsx"
 
 
 function Form(props) {
-    return <form className="form">
+    return <form
+        onSubmit={event => {
+            event.preventDefault()
+            const newSurveys = JSON.parse(JSON.stringify(props.surveys))
+            newSurveys.push(props.formData);
+            props.setSurveys(newSurveys)
+            props.setFormData(props.initialForm)
+
+        }}
+        className="form">
         <h2>Tell us what you think about your rubber duck!</h2>
         <div className="form__group">
             <h3>What would you say that are the best features of your rubber duck?</h3>
